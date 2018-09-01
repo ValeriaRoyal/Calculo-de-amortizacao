@@ -12,13 +12,11 @@
         
         <link href="style.css" rel="stylesheet">
     </head>
-    <body>
-        
+    <body>  
         
     <form>
-        Periodo
-        <input type="text" name="periodo">
-        <br>Saldo  devedor
+        
+        <br>Saldo devedor
         <input type="text" name="saldo_devedor">
         <br>Parcela
         <input type="text" name="parcela">
@@ -27,40 +25,44 @@
         <br>
         <input type="submit" nome ="calculo" value="Calcular">
     </form> 
-        
-        
-    <table>
-        <tr>
-          <th>Periodo <i>n</i></th>
-          <th>Saldo Devedor <i>PV-A</i></th>
-          <th>Parcela <i>pmt</i></th>
-          <th>Juros <i>J</i></th>
-          <th>Amortização <i>pmt - J</i></th>
-        </tr>
+     
+         <table>
+            <tr>
+              <th>Periodo <i>n</i></th>
+              <th>Saldo Devedor <i>PV-A</i></th>
+              <th>Parcela <i>pmt</i></th>
+              <th>Juros <i>J</i></th>
+              <th>Amortização <i>pmt - J</i></th>
+            </tr>
 
-  <% 
-        double saldo_devedor;
-        double juros;
-        double parcela;
-        double periodo;
-        double prestacao;
+        <%
+            String saldo_devedor = request.getParameter("saldo_devedor"); 
+            String parcela = request.getParameter("parcela"); 
+            String juros = request.getParameter("juros");  
+
+        %>             
+ 
+        <%if( saldo_devedor !=null && parcela !=null && juros !=null ){
+                double sal = Double.parseDouble(saldo_devedor);
+                double par = Double.parseDouble(parcela);
+                double ju = Double.parseDouble(juros);  
+                      
+        %>   
         
-        double parc = ();
-        double dev = saldo_devedor * juros;
-        double = (prestacao - (juros/100));
+       <% for (int i = 0; i <= par; i++) { %>
+               
+        <tr>
+            <th><%= i%></th><%--Periodo--%>
+            <th><%= sal%></th><%--saldo devedor--%>
+            <th><%= sal = (sal/(Math.pow((1-(1+ju)),i)))/ju%></th><%--Parcela--%>
+            <th><%= ju += sal*(ju/100)%></th><%--Juros--%>
+            <th><%= par-ju%></th><%--Amortizacao--%>
+        </tr>   
         
-  %>
-  
-  
-        <%if((request.getParameter("saldo_devedor")!=null)){ %>      
-            <%for(int i = 0; i<= periodo;i++){ %>      
-                <td><%= i %></td> 
-                <td><%= %></td>
-                <td><%= %></td>
-                <td><%= %></td>
-                <td><%= %></td>
-            <%}%>
-        <%}%>
+            <%}%> 
+        <%}%> 
+        
+       
         
         </table>    
     </body>
