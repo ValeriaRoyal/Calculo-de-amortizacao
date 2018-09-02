@@ -51,73 +51,74 @@ public final class tabela_002dprice_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("        \n");
       out.write("        <link href=\"style.css\" rel=\"stylesheet\">\n");
       out.write("    </head>\n");
-      out.write("    <body>\n");
-      out.write("        \n");
+      out.write("    <body>  \n");
       out.write("        \n");
       out.write("    <form>\n");
-      out.write("        Periodo\n");
-      out.write("        <input type=\"text\" name=\"periodo\">\n");
-      out.write("        <br>Saldo  devedor\n");
-      out.write("        <input type=\"text\" name=\"saldev\">\n");
-      out.write("        <br>Parcela\n");
-      out.write("        <input type=\"text\" name=\"parcela\">\n");
-      out.write("        <br>Juros\n");
-      out.write("        <input type=\"text\" name=\"juros\">\n");
+      out.write("        \n");
+      out.write("        <br>Empréstimo inicial (em R$):\n");
+      out.write("        <input type=\"text\" name=\"C\">\n");
+      out.write("        <br>Tempo (em meses):\n");
+      out.write("        <input type=\"text\" name=\"n\">\n");
+      out.write("        <br>Taxa de juros (% em meses):\n");
+      out.write("        <input type=\"text\" name=\"i\">\n");
       out.write("        <br>\n");
       out.write("        <input type=\"submit\" nome =\"calculo\" value=\"Calcular\">\n");
       out.write("    </form> \n");
-      out.write("        \n");
-      out.write("        \n");
-      out.write("    <table>\n");
-      out.write("        <tr>\n");
-      out.write("          <th>Periodo <i>n</i></th>\n");
-      out.write("          <th>Saldo Devedor <i>PV-A</i></th>\n");
-      out.write("          <th>Parcela <i>pmt</i></th>\n");
-      out.write("          <th>Juros <i>J</i></th>\n");
-      out.write("          <th>Amortização <i>pmt - J</i></th>\n");
-      out.write("        </tr>\n");
+      out.write("     \n");
+      out.write("         <table>\n");
+      out.write("            <tr>\n");
+      out.write("              <th>Periodo <i>n</i></th>\n");
+      out.write("              <th>Saldo Devedor <i>PV-A</i></th>\n");
+      out.write("              <th>Juros <i>J</i></th>\n");
+      out.write("              <th>Parcela <i>pmt</i></th>\n");
+      out.write("              <th>Amortização <i>pmt - J</i></th>\n");
+      out.write("            </tr>\n");
       out.write("\n");
-      out.write("  ");
- 
-        int saldev = 0;
-        int juros = 0;
-        int parcela = 0;
-        int periodo = 0;
-        int prestacao =0;
-        
-        
+      out.write("      ");
+  try {
+                double C = Double.parseDouble(request.getParameter("C"));
+                double i = Double.parseDouble(request.getParameter("i")) / 100;
+                int n = Integer.parseInt(request.getParameter("n"));
+                double PMT, juros, saldo = C;
+
+                if (C > 0.0 && n > 0 && i > 0.0){  
       out.write("\n");
-      out.write("  \n");
-      out.write("  \n");
-      out.write("        ");
-if((request.getParameter("saldev")!=null)){ 
-      out.write("      \n");
+      out.write("                <table border=\"1\" class=\"fonte\"; font-size: 1.5em;\">\n");
+      out.write("                    <tr><th>Mês</th><th>Parcela</th><th>Amortização</th><th>Juros</th><th>Saldo Devedor</th></tr>\n");
       out.write("            ");
-for(int i = 0; i<= periodo;i++){ 
-      out.write("      \n");
-      out.write("                <td>");
-      out.print( i );
-      out.write("</td> \n");
-      out.write("                <td>");
-      out.print( saldev );
-      out.write("</td>\n");
-      out.write("                <td>");
-      out.print( (int)(saldev/(1-(1+(juros/100)^-periodo)/(juros/100))) );
-      out.write("</td>\n");
-      out.write("                <td>");
-      out.print( (saldev = saldev * juros));
-      out.write("</td>\n");
-      out.write("                <td>");
-      out.print( (prestacao - (juros/100)));
-      out.write("</td>\n");
-      out.write("            ");
-}
+  PMT = C / ((1 - Math.pow(1 + i, -n)) / i);
+                for (int ct = 1; ct <= n; ct++){
+                    juros = saldo * i;
+                    saldo -= (PMT - juros); 
       out.write("\n");
-      out.write("        ");
-}
+      out.write("                    <tr><th>");
+      out.print( ct );
+      out.write("</th><td>");
+      out.print( String.format("%.2f", PMT) );
+      out.write("</td><td>");
+      out.print( String.format("%.2f", PMT - juros) );
+      out.write("</td><td>");
+      out.print( String.format("%.2f", juros) );
+      out.write("</td><td>");
+      out.print( String.format("%.2f", saldo) );
+      out.write("</td></tr>\n");
+      out.write("            ");
+  }  
+      out.write("\n");
+      out.write("                </table>\n");
+      out.write("            ");
+  } else {  
+      out.write("\n");
+      out.write("                    <h3 class=\"h3fonte\">Favor colocar valores maiores que zero.</h3>\n");
+      out.write("            ");
+  }
+            } catch (Exception ex){  
+      out.write("\n");
+      out.write("                <h3 class=\"h3fonte\">Favor colocar valores válidos.</h3>\n");
+  }  
       out.write("\n");
       out.write("        \n");
-      out.write("        </table>    \n");
+      out.write("         </table>    \n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

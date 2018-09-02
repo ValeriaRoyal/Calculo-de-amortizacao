@@ -12,7 +12,9 @@
         
         <link href="style.css" rel="stylesheet">
     </head>
-    <body>  
+    <body>
+        <%@include file="WEB-INF/jspf/home.jspf"%>
+        
         <h1 align='center'>Sistema Price de Amortização</h1>
             <p align="center">Tabela Price, também chamado de sistema francês de amortização 
                           é um método usado em amortização de empréstimo cuja principal
