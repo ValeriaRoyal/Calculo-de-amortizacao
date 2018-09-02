@@ -30,8 +30,8 @@
             <tr>
               <th>Periodo <i>n</i></th>
               <th>Saldo Devedor <i>PV-A</i></th>
-              <th>Parcela <i>pmt</i></th>
               <th>Juros <i>J</i></th>
+              <th>Parcela <i>pmt</i></th>
               <th>Amortização <i>pmt - J</i></th>
             </tr>
 
@@ -41,29 +41,29 @@
             String juros = request.getParameter("juros");  
 
         %>             
- 
+        
+                
         <%if( saldo_devedor !=null && parcela !=null && juros !=null ){
+                
                 double sal = Double.parseDouble(saldo_devedor);
                 double par = Double.parseDouble(parcela);
                 double ju = Double.parseDouble(juros);  
-                      
         %>   
         
+                            
        <% for (int i = 0; i <= par; i++) { %>
                
         <tr>
             <th><%= i%></th><%--Periodo--%>
             <th><%= sal%></th><%--saldo devedor--%>
-            <th><%= sal = (sal/(Math.pow((1-(1+ju)),i)))/ju%></th><%--Parcela--%>
-            <th><%= ju += sal*(ju/100)%></th><%--Juros--%>
-            <th><%= par-ju%></th><%--Amortizacao--%>
+            <th><%= sal*ju/100 %></th><%--Juros--%>
+            <th><%= (double)(sal*ju)/(1-Math.pow((1+ju),-i))%></th><%--Parcela--%>
+            <th><%= i%></h><%--Amortizacao--%>
         </tr>   
         
             <%}%> 
         <%}%> 
         
-       
-        
-        </table>    
+         </table>    
     </body>
 </html>
