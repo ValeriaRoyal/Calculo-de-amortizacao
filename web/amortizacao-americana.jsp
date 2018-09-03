@@ -12,6 +12,8 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <%@include file="WEB-INF/jspf/home.jspf"%>
+        
         <h1>Hello World!</h1>
     </body>
 </html>

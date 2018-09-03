@@ -12,58 +12,48 @@
         
         <link href="style.css" rel="stylesheet">
     </head>
-    <body>  
+    <body>
+        <%@include file="WEB-INF/jspf/home.jspf"%>
         
+        <h1 align='center'>Sistema Price de Amortização</h1>
+            <p align="center">Tabela Price, também chamado de sistema francês de amortização 
+                          é um método usado em amortização de empréstimo cuja principal
+                          característica é apresentar prestações (ou parcelas) iguais. </p>
+        <hr/>
     <form>
+        Empréstimo inicial (em R$):<br><input type="text" name="C"><br>
+        Tempo (em meses):<br><input type="text" name="n"><br>
+        Taxa de juros (% em meses):<br><input type="text" name="i"><br>
         
-        <br>Saldo devedor
-        <input type="text" name="saldo_devedor">
-        <br>Parcela
-        <input type="text" name="parcela">
-        <br>Juros
-        <input type="text" name="juros">
-        <br>
         <input type="submit" nome ="calculo" value="Calcular">
     </form> 
-     
-         <table>
-            <tr>
-              <th>Periodo <i>n</i></th>
-              <th>Saldo Devedor <i>PV-A</i></th>
-              <th>Juros <i>J</i></th>
-              <th>Parcela <i>pmt</i></th>
-              <th>Amortização <i>pmt - J</i></th>
-            </tr>
-
-        <%
-            String saldo_devedor = request.getParameter("saldo_devedor"); 
-            String parcela = request.getParameter("parcela"); 
-            String juros = request.getParameter("juros");  
-
-        %>             
-        
+      
+    <%  try {   
+                // pegando os valores do formulario e convertendo.
+                double C = Double.parseDouble(request.getParameter("C"));
+                double i = Double.parseDouble(request.getParameter("i")) / 100; // Taxa de juros convertida em porcentagem
+                int n = Integer.parseInt(request.getParameter("n"));
+                double PMT, juros, saldo = C; //Prestação, juros, saldo = Capital
                 
-        <%if( saldo_devedor !=null && parcela !=null && juros !=null ){
-                
-                double sal = Double.parseDouble(saldo_devedor);
-                double par = Double.parseDouble(parcela);
-                double ju = Double.parseDouble(juros);  
-        %>   
-        
+                // tratamento de erro
+                if (C > 0.0 && n > 0 && i > 0.0){  %>
+                <table>
+                    <tr><th>Mês</th><th>Parcela</th><th>Amortização</th><th>Juros</th><th>Saldo Devedor</th></tr>
+                        <%  PMT = C / ((1 - Math.pow(1 + i, -n)) / i);
                             
-       <% for (int i = 0; i <= par; i++) { %>
-               
-        <tr>
-            <th><%= i%></th><%--Periodo--%>
-            <th><%= sal%></th><%--saldo devedor--%>
-            <th><%= sal*ju/100 %></th><%--Juros--%>
-            <th><%= (double)(sal*ju)/(1-Math.pow((1+ju),-i))%></th><%--Parcela--%>
-            <th><%= i%></h><%--Amortizacao--%>
-        </tr>   
-        
-            <%}%> 
-        <%}%> 
-        
-         </table>    
+                        for (int ct = 1; ct <= n; ct++){
+                            juros = saldo * i;
+                            saldo -= (PMT - juros); %>
+                    <%-- Aplicando filtro de valores --%>
+                    <tr><th><%= ct %></th><td><%= String.format("%.2f", PMT) %></td><td><%= String.format("%.2f", PMT - juros) %></td><td><%= String.format("%.2f", juros) %></td><td><%= String.format("%.2f", saldo) %></td></tr>
+                        <%  }  %>
+                </table>
+                    <%  } else {  %>
+                        <h3>Favor colocar valores maiores que zero.</h3>
+                    <%  }
+    } catch (Exception ex){  %>
+        <h3>Favor colocar valores válidos.</h3>
+<%  }  %>
+           
     </body>
 </html>

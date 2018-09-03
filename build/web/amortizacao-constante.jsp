@@ -16,6 +16,8 @@
         <title>Amortização Constante</title>
     </head>
     <body>
+        <%@include file="WEB-INF/jspf/home.jspf"%>
+        
         <h1 align='center'>Amortização constante</h1>
         <p align="center">Aqui você pode calcular seu emprestimo usando
             o Sistema de Amortização Constante (SAC) que é uma forma de 
