@@ -62,6 +62,7 @@ public final class amortizacao_002dconstante_jsp extends org.apache.jasper.runti
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("        <title>Amortização Constante</title>\r\n");
+      out.write("        <link href=\"style.css\" rel=\"stylesheet\"/>\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("        ");
@@ -96,6 +97,7 @@ public final class amortizacao_002dconstante_jsp extends org.apache.jasper.runti
       out.write("        <br/>\r\n");
       out.write("            ");
 if(request.getParameter("BC")!=null){
+                //Declaração de variáveis
                 NumberFormat formato = new DecimalFormat ("#,##0.00", new DecimalFormatSymbols (new Locale ("pt", "BR")));
                 double SaldoDevedor = Double.parseDouble(request.getParameter("SD"));
                 double TaxaJuros = (Double.parseDouble(request.getParameter("TX")))/100;
@@ -189,6 +191,8 @@ if(i==0){
 }
       out.write("\r\n");
       out.write("                <tr>\r\n");
+      out.write("                    ");
+      out.write("\r\n");
       out.write("                    <th>Total</th>\r\n");
       out.write("                    <td colspan=\"2\">");
       out.print("Pago - R$ "+formato.format(TotalP));

@@ -14,17 +14,20 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Amortização Constante</title>
+        <link href="style.css" rel="stylesheet"/>
     </head>
     <body>
+        <div class="fundoUp">
         <%@include file="WEB-INF/jspf/home.jspf"%>
         
-        <h1 align='center'>Amortização constante</h1>
-        <p align="center">Aqui você pode calcular seu emprestimo usando
+        <h1 class="titulo">AMORTIZAÇÃO CONSTANTE</h1>
+        <p class="texto">Aqui você pode calcular seu emprestimo usando
             o Sistema de Amortização Constante (SAC) que é uma forma de 
             amortização por prestações que incluem 
             os juros, amortizando assim partes iguais do valor total 
             do empréstimo.</p>
         <hr/>
+        
         <form align='center'>
             Saldo devedor:<br/>
             <input type="text" name="SD"/><br/>
@@ -35,7 +38,9 @@
             <br/><input type="submit" name="BC" value="Calcular"/>
         </form>
         <br/>
+        
             <%if(request.getParameter("BC")!=null){
+                //Declaração de variáveis
                 NumberFormat formato = new DecimalFormat ("#,##0.00", new DecimalFormatSymbols (new Locale ("pt", "BR")));
                 double SaldoDevedor = Double.parseDouble(request.getParameter("SD"));
                 double TaxaJuros = (Double.parseDouble(request.getParameter("TX")))/100;
@@ -44,10 +49,10 @@
                 double TotalJ=0;
                 double TotalP=0;
                 
-            %><table border='1px' align='center'>
+                %><table class="tabela">
                 <tr>
                     <th>Tempo</th><th>Prestação</th><th>Juros</th>
-                    <th>Amortizacao</th><th>Saldo Devedor</th>
+                    <th>Amortização</th><th>Saldo Devedor</th>
                 </tr>
                 <%for(int i=0;i<=Tempo;i++){%>
                     <tr>
@@ -85,6 +90,7 @@
                     </tr>   
                 <%}%>
                 <tr>
+                    <%--Exibição dos resultados finais.--%>
                     <th>Total</th>
                     <td colspan="2"><%="Pago - R$ "+formato.format(TotalP)%></td>
                     <td colspan="2"><%="Juros pago - R$ "+formato.format(TotalJ)%></td>
@@ -92,6 +98,8 @@
             </table>
             <%}%>
         <hr/>
+        
         <p align='center'>Todos os direitos reservados.</p>
+        </div>
     </body>
 </html>
