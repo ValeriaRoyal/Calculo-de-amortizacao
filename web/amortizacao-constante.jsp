@@ -14,7 +14,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Amortização Constante</title>
-        <link href="style.css" rel="stylesheet"/>
+        <link href="CSS/style.css" rel="stylesheet"/>
     </head>
     <body>
         <div class="fundoUp">
@@ -97,9 +97,8 @@
                 </tr>
             </table>
             <%}%>
-        <hr/>
-        
-        <p align='center'>Todos os direitos reservados.</p>
+
+        <%@include file="WEB-INF/jspf/rodape.jspf"%>
         </div>
     </body>
 </html>
