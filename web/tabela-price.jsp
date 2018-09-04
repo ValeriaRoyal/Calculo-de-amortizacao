@@ -38,14 +38,13 @@
                 // tratamento de erro
                 if (C > 0.0 && n > 0 && i > 0.0){  %>
                 <table>
-                    <tr><th>Mês</th><th>Parcela</th><th>Amortização</th><th>Juros</th><th>Saldo Devedor</th></tr>
+                     <tr><th>Mês</th><th>Saldo Devedor</th><th>Amortização</th><th>Juros</th><th>Parcela</th></tr>
                         <%  PMT = C / ((1 - Math.pow(1 + i, -n)) / i);
-                            
                         for (int ct = 1; ct <= n; ct++){
                             juros = saldo * i;
                             saldo -= (PMT - juros); %>
                     <%-- Aplicando filtro de valores --%>
-                    <tr><th><%= ct %></th><td><%= String.format("%.2f", PMT) %></td><td><%= String.format("%.2f", PMT - juros) %></td><td><%= String.format("%.2f", juros) %></td><td><%= String.format("%.2f", saldo) %></td></tr>
+                    <tr><th><%= ct %></th><td><%= String.format("%.2f", saldo) %></td><td><%= String.format("%.2f", PMT - juros) %></td><td><%= String.format("%.2f", juros) %></td><td><%= String.format("%.2f", PMT) %></td></tr>
                         <%  }  %>
                 </table>
                     <%  } else {  %>
