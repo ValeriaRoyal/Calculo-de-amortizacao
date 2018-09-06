@@ -1,7 +1,7 @@
 <%-- 
     Document   : amortizacao-americana
     Created on : 01/09/2018, 00:24:26
-    Author     : valre
+    Author     : José Wandes
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
