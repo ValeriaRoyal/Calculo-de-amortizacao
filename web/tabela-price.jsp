@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Tabela Price</title>
+        <link href="CSS/style.css" rel="stylesheet"/>
     </head>
     <body>
         <%@include file="WEB-INF/jspf/home.jspf"%>
@@ -27,7 +28,8 @@
                     double C = Double.parseDouble(request.getParameter("C"));
                     double i = Double.parseDouble(request.getParameter("i")) / 100;
                     int n = Integer.parseInt(request.getParameter("n"));
-                    double PMT, juros, saldo = C;
+                    double PMT, juros; 
+                    double saldo = C;
 
                     if (C > 0.0 && n > 0 && i > 0.0){  %>
                         <table>
@@ -37,11 +39,9 @@
                                 <th>Juros</th>
                                 <th>Saldo Devedor</th>
                             </tr>
-                    <%  PMT = C / ((1 - Math.pow(1 + i, -n)) / i);
+                    <% PMT = C / ((1 - Math.pow(1 + i, -n)) / i);%>
                         
-                    for (int ct = 0; ct <= n; ct++){
-                            juros = saldo * i;
-                            saldo -= (PMT - juros); %>
+                    <% for (int ct = 0; ct <= n; ct++){%>
                             
                             <tr><th><%= ct %></th>
                                 <td><% if(ct!=0){%>
@@ -49,16 +49,22 @@
                                     <%}%>
                                 </td>
                                 <td><% if(ct!=0){%>
+                                        <% juros = saldo * i;%>
                                         <%= String.format("%.2f", PMT - juros) %>
                                     <%}%>
                                 </td>
                                 <td><% if(ct!=0){%>
+                                    
+                                        <% juros = saldo * i;%>
                                         <%= String.format("%.2f", juros) %>
                                     <%}%>
                                 </td>
                                 <td><% if(ct==0){%>
                                         <%= String.format("%.2f", saldo) %>
                                     <%}else{%>
+                                    
+                                        <% juros = saldo * i;%>
+                                        <% saldo -= (PMT - juros);%>
                                         <%= String.format("%.2f", saldo) %>
                                     <%}%>
                                 </td>
