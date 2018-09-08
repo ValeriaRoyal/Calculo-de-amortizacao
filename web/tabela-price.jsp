@@ -10,19 +10,23 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Tabela Price</title>
-        <link href="CSS/style.css" rel="stylesheet"/>
+        <link rel="stylesheet" type="text/css" href="CSS/style.css">
     </head>
-    <body>
-        <%@include file="WEB-INF/jspf/home.jspf"%>
-        
-     <h3>Sistema Price de Amortização</h3>
-            <form>
-                Empréstimo inicial (em R$): <input type="text" name="C"><br>
-                Tempo (em meses): <input type="text" name="n"><br>
-                Taxa de juros (% em meses): <input type="text" name="i"><br>
-                <input type="submit" value="Calcular">
-            </form>
-      
+        <body>
+            
+            <%@include file="WEB-INF/jspf/home.jspf"%>
+            
+    <div class="fundo">        
+            <h3>Sistema Price de Amortização</h3>
+                <form>
+                    
+                    Empréstimo inicial (em R$):<br><input type="text" name="C"><br>
+                    Tempo (em meses):<br><input type="text" name="n"><br>
+                    Taxa de juros (% em meses):<br><input type="text" name="i"><br>
+                    <input type="submit" value="Calcular"></td>
+                    
+                </form>
+            
                
             <%  try {
                     double C = Double.parseDouble(request.getParameter("C"));
@@ -32,7 +36,7 @@
                     double saldo = C;
 
                     if (C > 0.0 && n > 0 && i > 0.0){  %>
-                        <table>
+                    <table>
                             <tr><th>Mês</th>
                                 <th>Parcela</th>
                                 <th>Amortização</th>
@@ -62,7 +66,6 @@
                                 <td><% if(ct==0){%>
                                         <%= String.format("%.2f", saldo) %>
                                     <%}else{%>
-                                    
                                         <% juros = saldo * i;%>
                                         <% saldo -= (PMT - juros);%>
                                         <%= String.format("%.2f", saldo) %>
@@ -76,7 +79,8 @@
                 <%  }
                 } catch (Exception ex){  %>
                     <h3>Favor colocar valores válidos.</h3>
-            <%  }  %>
-
-</body>
+                <%  }  %>
+    </div>        
+        <%@include file="WEB-INF/jspf/rodape.jspf"%>
+    </body>
 </html>
