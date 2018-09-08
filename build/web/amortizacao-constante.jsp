@@ -13,14 +13,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Amortização Constante</title>
-        <link href="CSS/style.css" rel="stylesheet"/>
+        <title>Projeto2 - Amortização Constante</title>
+        <link href="CSS/styleOficial.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
-        <div class="fundoUp">
-        <%@include file="WEB-INF/jspf/home.jspf"%>
         
-        <h1 class="titulo">AMORTIZAÇÃO CONSTANTE</h1>
+        <%@include file="WEB-INF/jspf/home.jspf"%>
+        <div class="fundo">
+        <h1>AMORTIZAÇÃO CONSTANTE</h1>
         <p class="texto">Aqui você pode calcular seu emprestimo usando
             o Sistema de Amortização Constante (SAC) que é uma forma de 
             amortização por prestações que incluem 

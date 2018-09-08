@@ -9,50 +9,78 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
-        <link href="CSS/style.css" rel="stylesheet">
+        <title>Tabela Price</title>
+        <link rel="stylesheet" type="text/css" href="CSS/style.css">
     </head>
-    <body>
-        <%@include file="WEB-INF/jspf/home.jspf"%>
-        
-        <h1 align='center'>Sistema Price de Amortização</h1>
-            <p align="center">Tabela Price, também chamado de sistema francês de amortização 
-                          é um método usado em amortização de empréstimo cuja principal
-                          característica é apresentar prestações (ou parcelas) iguais. </p>
-        <hr/>
-    <form>
-        Empréstimo inicial (em R$):<br><input type="text" name="C"><br>
-        Tempo (em meses):<br><input type="text" name="n"><br>
-        Taxa de juros (% em meses):<br><input type="text" name="i"><br>
-        
-        <input type="submit" nome ="calculo" value="Calcular">
-    </form> 
-      
-    <%  try {   
-                // pegando os valores do formulario e convertendo.
-                double C = Double.parseDouble(request.getParameter("C"));
-                double i = Double.parseDouble(request.getParameter("i")) / 100; // Taxa de juros convertida em porcentagem
-                int n = Integer.parseInt(request.getParameter("n"));
-                double PMT, juros, saldo = C; //Prestação, juros, saldo = Capital
-                
-                // tratamento de erro
-                if (C > 0.0 && n > 0 && i > 0.0){  %>
-                <table>
-                     <tr><th>Mês</th><th>Saldo Devedor</th><th>Amortização</th><th>Juros</th><th>Parcela</th></tr>
-                        <%  PMT = C / ((1 - Math.pow(1 + i, -n)) / i);
-                        for (int ct = 1; ct <= n; ct++){
-                            juros = saldo * i;
-                            saldo -= (PMT - juros); %>
-                    <%-- Aplicando filtro de valores --%>
-                    <tr><th><%= ct %></th><td><%= String.format("%.2f", saldo) %></td><td><%= String.format("%.2f", PMT - juros) %></td><td><%= String.format("%.2f", juros) %></td><td><%= String.format("%.2f", PMT) %></td></tr>
-                        <%  }  %>
-                </table>
-                    <%  } else {  %>
+        <body>
+            
+            <%@include file="WEB-INF/jspf/home.jspf"%>
+            
+    <div class="fundo">        
+            <h3>Sistema Price de Amortização</h3>
+                <form>
+                    
+                    Empréstimo inicial (em R$):<br><input type="text" name="C"><br>
+                    Tempo (em meses):<br><input type="text" name="n"><br>
+                    Taxa de juros (% em meses):<br><input type="text" name="i"><br>
+                    <input type="submit" value="Calcular"></td>
+                    
+                </form>
+            
+               
+            <%  try {
+                    double C = Double.parseDouble(request.getParameter("C"));
+                    double i = Double.parseDouble(request.getParameter("i")) / 100;
+                    int n = Integer.parseInt(request.getParameter("n"));
+                    double PMT, juros; 
+                    double saldo = C;
+
+                    if (C > 0.0 && n > 0 && i > 0.0){  %>
+                    <table>
+                            <tr><th>Mês</th>
+                                <th>Parcela</th>
+                                <th>Amortização</th>
+                                <th>Juros</th>
+                                <th>Saldo Devedor</th>
+                            </tr>
+                    <% PMT = C / ((1 - Math.pow(1 + i, -n)) / i);%>
+                        
+                    <% for (int ct = 0; ct <= n; ct++){%>
+                            
+                            <tr><th><%= ct %></th>
+                                <td><% if(ct!=0){%>
+                                        <%= String.format("%.2f", PMT) %>
+                                    <%}%>
+                                </td>
+                                <td><% if(ct!=0){%>
+                                        <% juros = saldo * i;%>
+                                        <%= String.format("%.2f", PMT - juros) %>
+                                    <%}%>
+                                </td>
+                                <td><% if(ct!=0){%>
+                                    
+                                        <% juros = saldo * i;%>
+                                        <%= String.format("%.2f", juros) %>
+                                    <%}%>
+                                </td>
+                                <td><% if(ct==0){%>
+                                        <%= String.format("%.2f", saldo) %>
+                                    <%}else{%>
+                                        <% juros = saldo * i;%>
+                                        <% saldo -= (PMT - juros);%>
+                                        <%= String.format("%.2f", saldo) %>
+                                    <%}%>
+                                </td>
+                            </tr>
+                    <%  }  %>
+                        </table>
+                <%  } else {  %>
                         <h3>Favor colocar valores maiores que zero.</h3>
-                    <%  }
-    } catch (Exception ex){  %>
-        <h3>Favor colocar valores válidos.</h3>
-<%  }  %>
-           
+                <%  }
+                } catch (Exception ex){  %>
+                    <h3>Favor colocar valores válidos.</h3>
+                <%  }  %>
+    </div>        
+        <%@include file="WEB-INF/jspf/rodape.jspf"%>
     </body>
 </html>

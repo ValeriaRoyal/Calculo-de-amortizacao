@@ -16,8 +16,9 @@ public final class amortizacao_002dconstante_jsp extends org.apache.jasper.runti
   private static java.util.List<String> _jspx_dependants;
 
   static {
-    _jspx_dependants = new java.util.ArrayList<String>(1);
+    _jspx_dependants = new java.util.ArrayList<String>(2);
     _jspx_dependants.add("/WEB-INF/jspf/home.jspf");
+    _jspx_dependants.add("/WEB-INF/jspf/rodape.jspf");
   }
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
@@ -62,29 +63,41 @@ public final class amortizacao_002dconstante_jsp extends org.apache.jasper.runti
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("        <title>Amortização Constante</title>\r\n");
-      out.write("        <link href=\"style.css\" rel=\"stylesheet\"/>\r\n");
+      out.write("        <link href=\"CSS/newcss.css\" type=\"text/css\" rel=\"stylesheet\"/>\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
+      out.write("        \r\n");
       out.write("        ");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("<a href=\"home.jsp\">Home</a>||\r\n");
-      out.write("<a href=\"amortizaca-americana\">Amortização Americana</a>||\r\n");
-      out.write("<a href=\"amortizacao-constante.jsp\">Amortização Constante</a>||\r\n");
-      out.write("<a href=\"tabela-price.jsp\">Tabela Price</a>||\r\n");
-      out.write("\r\n");
-      out.write("<hr>");
-      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/>\r\n");
+      out.write("        <link href=\"CSS/newcss.css\" type=\"text/css\" rel=\"stylesheet\"/>\r\n");
       out.write("        \r\n");
-      out.write("        <h1 align='center'>Amortização constante</h1>\r\n");
-      out.write("        <p align=\"center\">Aqui você pode calcular seu emprestimo usando\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
+      out.write("        <div class=\"areaCabecalho\">\r\n");
+      out.write("            <div class=\"areaMenu\">\r\n");
+      out.write("                <a href=\"home.jsp\">Home</a>\r\n");
+      out.write("                <a href=\"amortizaca-americana\">Amortização Americana</a>\r\n");
+      out.write("                <a href=\"amortizacao-constante.jsp\">Amortização Constante</a>\r\n");
+      out.write("                <a href=\"tabela-price.jsp\">Tabela Price</a>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </body>\r\n");
+      out.write("</html>\r\n");
+      out.write("\r\n");
+      out.write("        <div class=\"fundo\">\r\n");
+      out.write("        <h1>AMORTIZAÇÃO CONSTANTE</h1>\r\n");
+      out.write("        <p class=\"texto\">Aqui você pode calcular seu emprestimo usando\r\n");
       out.write("            o Sistema de Amortização Constante (SAC) que é uma forma de \r\n");
       out.write("            amortização por prestações que incluem \r\n");
       out.write("            os juros, amortizando assim partes iguais do valor total \r\n");
       out.write("            do empréstimo.</p>\r\n");
       out.write("        <hr/>\r\n");
+      out.write("        \r\n");
       out.write("        <form align='center'>\r\n");
       out.write("            Saldo devedor:<br/>\r\n");
       out.write("            <input type=\"text\" name=\"SD\"/><br/>\r\n");
@@ -95,6 +108,7 @@ public final class amortizacao_002dconstante_jsp extends org.apache.jasper.runti
       out.write("            <br/><input type=\"submit\" name=\"BC\" value=\"Calcular\"/>\r\n");
       out.write("        </form>\r\n");
       out.write("        <br/>\r\n");
+      out.write("        \r\n");
       out.write("            ");
 if(request.getParameter("BC")!=null){
                 //Declaração de variáveis
@@ -106,11 +120,11 @@ if(request.getParameter("BC")!=null){
                 double TotalJ=0;
                 double TotalP=0;
                 
-            
-      out.write("<table border='1px' align='center'>\r\n");
+                
+      out.write("<table class=\"tabela\">\r\n");
       out.write("                <tr>\r\n");
       out.write("                    <th>Tempo</th><th>Prestação</th><th>Juros</th>\r\n");
-      out.write("                    <th>Amortizacao</th><th>Saldo Devedor</th>\r\n");
+      out.write("                    <th>Amortização</th><th>Saldo Devedor</th>\r\n");
       out.write("                </tr>\r\n");
       out.write("                ");
 for(int i=0;i<=Tempo;i++){
@@ -205,8 +219,14 @@ if(i==0){
       out.write("            ");
 }
       out.write("\r\n");
-      out.write("        <hr/>\r\n");
-      out.write("        <p align='center'>Todos os direitos reservados.</p>\r\n");
+      out.write("\r\n");
+      out.write("        ");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<hr>\r\n");
+      out.write("\r\n");
+      out.write("        </div>\r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {
