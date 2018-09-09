@@ -6,12 +6,14 @@ body{
     text-align: center;
     background: #f2f2f2;
     font-family: monospace;
+   
 }
 
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    
 }
 
 td, th {
@@ -50,11 +52,12 @@ tr:nth-child(even) {
 }
 /*Área do menu*/
 .areaCabecalho{
-    border: 1px solid white;
+    border: 1px solid black;   
+    background-color: lightblue;
     border-bottom: 1px solid #d9d9d9;
     width: 100%;
-    height: 50px;
-    background: white;
+    height: 7%;
+    background: lightblue;
     position: fixed;
     top: 0;
 }
@@ -72,6 +75,7 @@ tr:nth-child(even) {
     float: left;
     color: cornflowerblue;
     font-size: 35px;
+    
 }
 a{
     text-decoration: none;
@@ -92,3 +96,69 @@ a:hover{
     background: cornflowerblue;
 }
 
+/* Wandes */
+h1 {   
+    
+    font-size: 28px;
+    font-family: Verdana, sans-serif;
+    font-style: italic;
+}
+
+
+.texto2 {
+        border: 1px transparent;
+        background-color: lightgrey;
+        border-radius: 12px;
+        text-align: justify;        
+ 	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+        
+      
+   
+}
+
+
+P{    
+    
+    font-style: normal;
+    font-family: arial;
+    font-size: 16px;
+   
+   
+}
+.titulo2 {
+    padding-top: 5%;
+    padding-right: 5%;
+    padding-bottom: 1%;
+    padding-left: 5%;
+   
+}
+
+.btn{
+    width: 80px;
+    background: lightgrey;
+    color: black;
+    padding: 7px;
+    cursor : pointer;
+}
+.btn:hover{
+    background-color: #F60;
+}
+
+input{    
+    border-radius: 4px; 
+    padding: 4px;
+                                                      
+}
+
+.tabela2{
+      border: 1px solid black;
+       border-collapse: collapse;           
+        background-color: white;
+        border-radius: 12px;
+        text-align: justify;        
+ 	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+      }

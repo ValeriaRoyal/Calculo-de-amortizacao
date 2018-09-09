@@ -8,16 +8,17 @@
         
     </head>
     <body>
+        
         <div class="areaCabecalho">
             <div class="area">
-                <h1 id="logo">PROJETO 2</h1>
+              
+                <h1 id="logo" >PROJETO 2</h1>
                 <div id="menu">
                 <a href="home.jsp">Home</a>
-                <a href="amortizaca-americana">Amortização Americana</a>
+                <a href="amortizacao-americana.jsp">Amortização Americana</a>
                 <a href="amortizacao-constante.jsp">Amortização Constante</a>
                 <a href="tabela-price.jsp">Tabela Price</a>
-                </div>
-            </div>
-        </div>
+                </div>               
+       </div>
     </body>
 </html>
