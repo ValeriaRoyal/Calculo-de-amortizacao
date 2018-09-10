@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : amortizacao_americana
     Created on : 01/09/2018, 00:24:26
     Author     : José Wandes
@@ -18,7 +18,7 @@
 
         <title>Amortização Americana</title>
 
-        <%@include file="WEB-INF/jspf/home.jspf"%>           
+        <%@include file="WEB-INF/jspf/cabecalho.jspf"%>           
 
         <link href= "CSS/styleOficial.css" rel="stylesheet"/>
 

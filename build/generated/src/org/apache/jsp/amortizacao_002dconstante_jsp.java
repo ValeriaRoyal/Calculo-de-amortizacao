@@ -17,7 +17,7 @@ public final class amortizacao_002dconstante_jsp extends org.apache.jasper.runti
 
   static {
     _jspx_dependants = new java.util.ArrayList<String>(2);
-    _jspx_dependants.add("/WEB-INF/jspf/home.jspf");
+    _jspx_dependants.add("/WEB-INF/jspf/cabecalho.jspf");
     _jspx_dependants.add("/WEB-INF/jspf/rodape.jspf");
   }
 
@@ -62,32 +62,34 @@ public final class amortizacao_002dconstante_jsp extends org.apache.jasper.runti
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("        <title>Amortização Constante</title>\r\n");
-      out.write("        <link href=\"CSS/newcss.css\" type=\"text/css\" rel=\"stylesheet\"/>\r\n");
+      out.write("        <title>Projeto2 - Amortização Constante</title>\r\n");
+      out.write("        <link href=\"CSS/styleOficial.css\" type=\"text/css\" rel=\"stylesheet\"/>\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("        \r\n");
       out.write("        ");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("<!DOCTYPE html>\r\n");
-      out.write("<html>\r\n");
-      out.write("    <head>\r\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/>\r\n");
-      out.write("        <link href=\"CSS/newcss.css\" type=\"text/css\" rel=\"stylesheet\"/>\r\n");
+      out.write("    \r\n");
+      out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/>\r\n");
+      out.write("<link href=\"CSS/styleOficial.css\" type=\"text/css\" rel=\"stylesheet\"/>\r\n");
+      out.write("\r\n");
+      out.write("<nav> ");
+      out.write("\r\n");
       out.write("        \r\n");
-      out.write("    </head>\r\n");
-      out.write("    <body>\r\n");
-      out.write("        <div class=\"areaCabecalho\">\r\n");
-      out.write("            <div class=\"areaMenu\">\r\n");
-      out.write("                <a href=\"home.jsp\">Home</a>\r\n");
-      out.write("                <a href=\"amortizaca-americana\">Amortização Americana</a>\r\n");
-      out.write("                <a href=\"amortizacao-constante.jsp\">Amortização Constante</a>\r\n");
-      out.write("                <a href=\"tabela-price.jsp\">Tabela Price</a>\r\n");
+      out.write("    <div class=\"areaCabecalho\">\r\n");
+      out.write("            <div class=\"area\">\r\n");
+      out.write("              \r\n");
+      out.write("                <h1 id=\"logo\" >PROJETO 2</h1>\r\n");
+      out.write("                <div id=\"menu\">\r\n");
+      out.write("                    <a href=\"../../home.jsp\">Home</a>\r\n");
+      out.write("                    <a href=\"../../amortizacao-americana.jsp\">Amortização Americana</a>\r\n");
+      out.write("                    <a href=\"../../amortizacao-americana.jsp\">Amortização Constante</a>\r\n");
+      out.write("                    <a href=\"../../tabela-price.jsp\">Tabela Price</a>\r\n");
+      out.write("                </div>               \r\n");
       out.write("            </div>\r\n");
-      out.write("        </div>\r\n");
-      out.write("    </body>\r\n");
-      out.write("</html>\r\n");
+      out.write("    </div>\r\n");
+      out.write("</nav>");
       out.write("\r\n");
       out.write("        <div class=\"fundo\">\r\n");
       out.write("        <h1>AMORTIZAÇÃO CONSTANTE</h1>\r\n");
@@ -224,7 +226,8 @@ if(i==0){
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("<hr>\r\n");
+      out.write("\r\n");
+      out.write("<hr><br><br><center><footer>Todos os direitos reservados.<br><br><a href=\"https://github.com/ValeriaRoyal/Calculo-de-amortizacao\">GitHub </a></footer></center><br><br>       \r\n");
       out.write("\r\n");
       out.write("        </div>\r\n");
       out.write("    </body>\r\n");

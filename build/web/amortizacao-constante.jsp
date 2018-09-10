@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : amortizacao-constante
     Created on : 01/09/2018, 00:23:53
     Author     : valre
@@ -16,28 +16,34 @@
         <title>Projeto2 - Amortização Constante</title>
         <link href="CSS/styleOficial.css" type="text/css" rel="stylesheet"/>
     </head>
-    <body>
-        
-        <%@include file="WEB-INF/jspf/home.jspf"%>
+    <body> 
+        <%@include file="WEB-INF/jspf/cabecalho.jspf"%>
         <div class="fundo">
-        <h1>AMORTIZAÇÃO CONSTANTE</h1>
-        <p class="texto">Aqui você pode calcular seu emprestimo usando
-            o Sistema de Amortização Constante (SAC) que é uma forma de 
-            amortização por prestações que incluem 
-            os juros, amortizando assim partes iguais do valor total 
-            do empréstimo.</p>
-        <hr/>
+            <h1 id="tituloTexto">AMORTIZAÇÃO CONSTANTE</h1>
+            <p class="texto">Neste sistema o saldo devedor é reembolsado em valores 
+            de amortização iguais. Desta forma, no sistema SAC o valor das 
+            prestações é decrescente, já que os juros diminuem a cada prestação. 
+            O valor da amortização é calculada dividindo-se o valor do principal 
+            pelo número de períodos de pagamento, ou seja, de parcelas.</p>
+            <p class="texto">O SAC é um dos tipos de sistema de amortização utilizados em 
+            financiamentos imobiliários. A principal característica do SAC é 
+            que ele amortiza um percentual fixo do valor principal (emissão), 
+            desde o início do financiamento. Esse percentual de amortização é 
+            sempre o mesmo, o que faz com que a parcela de amortização da dívida 
+            seja maior no início do financiamento, fazendo com que o saldo devedor 
+            caia mais rapidamente do que em outros mecanismos de amortização.</p>
+            <hr/>
         
-        <form align='center'>
-            Saldo devedor:<br/>
-            <input type="text" name="SD"/><br/>
-            Taxa de juros (%):<br/>
-            <input type="text" name="TX"/><br/>
-            Tempo:<br/>
-            <input type="text" name="T"/><br/>
-            <br/><input type="submit" name="BC" value="Calcular"/>
-        </form>
-        <br/>
+            <form>
+              Saldo devedor:<br/>
+              <input type="text" name="SD"/><br/>
+              Taxa de juros (%):<br/>
+               <input type="text" name="TX"/><br/>
+               Tempo:<br/>
+              <input type="text" name="T"/><br/>
+              <br/><input type="submit" name="BC" value="Calcular"/>
+            </form>
+            <br/>
         
             <%if(request.getParameter("BC")!=null){
                 //Declaração de variáveis
