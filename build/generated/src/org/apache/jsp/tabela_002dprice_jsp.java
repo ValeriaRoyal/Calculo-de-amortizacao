@@ -11,6 +11,11 @@ public final class tabela_002dprice_jsp extends org.apache.jasper.runtime.HttpJs
 
   private static java.util.List<String> _jspx_dependants;
 
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(1);
+    _jspx_dependants.add("/WEB-INF/jspf/cabecalho.jspf");
+  }
+
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
   public java.util.List<String> getDependants() {
@@ -49,10 +54,33 @@ public final class tabela_002dprice_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("        <title>Tabela Price</title>\r\n");
-      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"CSS/style.css\">\r\n");
+      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"CSS/styleOficial.css\">\r\n");
       out.write("    </head>\r\n");
       out.write("        <body>\r\n");
       out.write("            \r\n");
+      out.write("            ");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<nav>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/>\n");
+      out.write("        <link href=\"CSS/styleOficial.css\" type=\"text/css\" rel=\"stylesheet\"/>\n");
+      out.write("\n");
+      out.write("        <div class=\"areaCabecalho\">\n");
+      out.write("            <div class=\"area\">\n");
+      out.write("              \n");
+      out.write("                <h1 id=\"logo\" >PROJETO 2</h1>\n");
+      out.write("                <div id=\"menu\">\n");
+      out.write("                <a href=\"home.jsp\">Home</a>\n");
+      out.write("                <a href=\"amortizacao-americana.jsp\">Amortização Americana</a>\n");
+      out.write("                <a href=\"amortizacao-constante.jsp\">Amortização Constante</a>\n");
+      out.write("                <a href=\"tabela-price.jsp\">Tabela Price</a>\n");
+      out.write("                </div>               \n");
+      out.write("       </div>\n");
+      out.write(" \n");
+      out.write("    </div>\n");
+      out.write("</nav>");
+      out.write("\r\n");
       out.write("            \r\n");
       out.write("    <div class=\"fundo\">        \r\n");
       out.write("            <h3>Sistema Price de Amortização</h3>\r\n");

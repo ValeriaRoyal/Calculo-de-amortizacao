@@ -1,10 +1,10 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
+    
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link href="CSS/styleOficial.css" type="text/css" rel="stylesheet"/>
 
 <nav>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <link href="CSS/styleOficial.css" type="text/css" rel="stylesheet"/>
-
         <div class="areaCabecalho">
             <div class="area">
               

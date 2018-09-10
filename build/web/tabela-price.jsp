@@ -80,6 +80,7 @@
                 } catch (Exception ex){  %>
                     <h3>Favor colocar valores válidos.</h3>
                 <%  }  %>
-    </div>        
+    </div>   
+                <%@include file="WEB-INF/jspf/rodape.jspf"%>
     </body>
 </html>
