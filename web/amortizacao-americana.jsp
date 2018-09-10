@@ -25,7 +25,7 @@
     </head>
     <body>
         <div class="titulo2">
-            <h1>
+             <h1>
                 AMORTIZAÇÃO AMERICANA
             </h1>
         </div>
@@ -52,82 +52,82 @@
                         <input class="btn" type="submit" name="calcular" value="Calcular">
                         <br>
                     </form>
-
+                    
                     <%if (request.getParameter("calcular") != null) {
                             NumberFormat formatacao = new DecimalFormat("#,##0.00", new DecimalFormatSymbols(new Locale("pt", "BR")));
 
-                            double divida = Double.parseDouble(request.getParameter("vl_divida"));
-                            double juros = Double.parseDouble(request.getParameter("vl_juros"));
+                            double sd_devedor = Double.parseDouble(request.getParameter("vl_divida"));                           
+                           
                             double tempo = Double.parseDouble(request.getParameter("qt_mes"));
-                            double prestacao = (juros / 100) * divida;
-                            double ac_amortizacao = 0, ac_juros = 0, ac_prestacao= 0;
+                            
+                            double prestacao =  sd_devedor * (Double.parseDouble(request.getParameter("vl_juros"))/100);
+                            
+                            double acumula_amortizacao = 0, acumula_juros = 0, acumula_prestacao= 0;
+                            
+                            double amortizacao =0, juros =0;
+
+
                     %>
 
                     
                     <table class="tabela2">
 
                         <tr>
-                            <th>Mês</th>
-                            <th>Saldo Devedor</th>
-                            <th>Amortização</th>
-                            <th>Juros</th>
-                            <th>Prestação</th>
+                            <th>N° Prestações</th>
+                            <th>Armotização</th>
+                            <th>Juros( <%=request.getParameter("vl_juros")%>% de <%=formatacao.format(sd_devedor)%>)</th>
+                            <th>Divida</th>
+                           
                         </tr>
-                        <%for (int i = 0; i <= tempo; i++) {%>
+                        
+                        <%amortizacao = sd_devedor;juros = prestacao;%>
+                        
+                        <%for (int nPrestacao = 0; nPrestacao <= tempo; nPrestacao++) {%>
                         <tr>     
                             
-                            <%--mês--%>
-                            <td><%=i%></td>
+                            <%--Exibindo Meses--%>
                             
-                            <%--saldo devedor --%>
-                            <%if (i < tempo) {%>                             
-                            <td><%="R$ "+formatacao.format(divida)%></td>                                  
-                            <%} else {%>      
-                            <td>-</td>               
-                            <%}%>  
+                            <td><%=nPrestacao%></td>
                             
-                            <%--amortização --%>
-                            <%if (i == tempo) {%>                             
-                            <td><%="R$ "+formatacao.format(divida)%></td>                            
+                               <%--Exibindo Amortização --%>
+                            
+                            <%if (nPrestacao == tempo) {%>                             
+                            <td><%="R$ "+formatacao.format(amortizacao)%></td>                            
                             <%} else {%>            
-                            <td>-</td>               
-                            <%}%>                         
-                            
-                            <%--juros--%>
-                            <%if (i > 0 ) {%>                             
-                            <td><%="R$ "+formatacao.format(prestacao)%></td> 
-                            <%ac_juros +=prestacao;%>
-                            <%} else {%>                                 
-                            <td>-</td>               
-                            <%}%>                                          
-                            
-                            <%--Prestação--%>
-                            <%if (i > 0 && i <10) {%>                             
-                            <td><%="R$ "+formatacao.format(prestacao)%></td> 
-                            <%ac_prestacao +=prestacao;%>
-                            <%} else if(i <10) {%>                             
-                            <td>-</td>   
-                            <%--prestação = amortização + juros --%>
-                            <%}else if(i == tempo){%> 
-                            <td><%="R$ "+formatacao.format(divida+prestacao)%></td>  
-                            <%ac_amortizacao=divida+prestacao;%>                        
+                            <td>0</td>               
                             <%}%>
-                                                       
+                            
+                             <%--Exibindo Juros--%>
+                            
+                            <%if (nPrestacao > 0 ) {%>                             
+                            <td><%="R$ "+formatacao.format(juros)%></td> 
+                            
+                            <%acumula_juros +=juros;%>  <%--Acmulando Juros--%>
+                            <%} else {%>                                 
+                            <td>0</td>               
+                            <%}%>
+                            
+                            <%--Exibindo saldo devedor --%>
+                            
+                            <%if (nPrestacao < tempo) {%>                             
+                            <td><%="R$ "+formatacao.format(sd_devedor)%></td>                                  
+                            <%} else {%>      
+                            <td>0</td>     
+                            <%}%>                           
+                                                                                                            
                         </tr>
                         <%}%> 
                         
-                        <tr>
-                            <td>Total :</td>
-                             <td>-</td>
-                            <td><%="R$ "+formatacao.format(divida)%></td>
-                            <td><%="R$ "+formatacao.format(ac_juros)%></td>
-                            <td><%="R$ "+formatacao.format(ac_prestacao+ac_amortizacao)%></td>
+                        <td>Total :</td>
+                             <td><%="R$ "+formatacao.format(amortizacao)%></td> 
+                             <td><%="R$ "+formatacao.format(acumula_juros)%></td>                                                      
+                            <td><%="R$ "+formatacao.format(amortizacao+acumula_juros)%></td>
                         </tr>
+                    
                         
                         
                     </table>
-                    <%}%>
-                   
+                    <%}%>                   
                     </body>
                     </html>
 
