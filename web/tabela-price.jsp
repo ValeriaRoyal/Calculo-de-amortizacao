@@ -10,11 +10,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Tabela Price</title>
-        <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="CSS/styleOficial.css">
     </head>
         <body>
             
-            <%@include file="WEB-INF/jspf/home.jspf"%>
+            <%@include file="WEB-INF/jspf/cabecalho.jspf"%>
             
     <div class="fundo">        
             <h3>Sistema Price de Amortização</h3>
@@ -81,6 +81,5 @@
                     <h3>Favor colocar valores válidos.</h3>
                 <%  }  %>
     </div>        
-        <%@include file="WEB-INF/jspf/rodape.jspf"%>
     </body>
 </html>

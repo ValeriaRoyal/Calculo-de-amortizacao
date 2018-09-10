@@ -3,10 +3,13 @@
     padding: 0;
 }
 body{
+    height: 100%;
     text-align: center;
     background: #f2f2f2;
-    font-family: monospace;
+    font-family: monospace;  
+    padding-bottom: 100%; 
    
+           
 }
 
 table {
@@ -67,7 +70,7 @@ tr:nth-child(even) {
 }
 #menu{
     float: right;
-    margin-top: 13px;
+    margin-top: 15px;
     color: cornflowerblue;
     font-size: 16px;
 }
@@ -111,11 +114,9 @@ h1 {
         border-radius: 12px;
         text-align: justify;        
  	margin-left: auto;
-	margin-right: auto;
+	margin-right: auto;        
 	width: 50%;
         
-      
-   
 }
 
 
@@ -161,4 +162,5 @@ input{
  	margin-left: auto;
 	margin-right: auto;
 	width: 50%;
+       
       }
