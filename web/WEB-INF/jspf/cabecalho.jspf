@@ -4,18 +4,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <link href="CSS/styleOficial.css" type="text/css" rel="stylesheet"/>
 
-<nav>
-        <div class="areaCabecalho">
+<nav> <%-- (<nav>) representa uma seção de uma página que aponta 
+para outras páginas ou para outras áreas da página, 
+ou seja, uma seção com links de navegação.--%>
+        
+    <div class="areaCabecalho">
             <div class="area">
               
                 <h1 id="logo" >PROJETO 2</h1>
                 <div id="menu">
-                <a href="home.jsp">Home</a>
-                <a href="amortizacao-americana.jsp">Amortização Americana</a>
-                <a href="amortizacao-constante.jsp">Amortização Constante</a>
-                <a href="tabela-price.jsp">Tabela Price</a>
+                    <a href="../../home.jsp">Home</a>
+                    <a href="../../amortizacao-americana.jsp">Amortização Americana</a>
+                    <a href="../../amortizacao-americana.jsp">Amortização Constante</a>
+                    <a href="../../tabela-price.jsp">Tabela Price</a>
                 </div>               
-       </div>
- 
+            </div>
     </div>
 </nav>

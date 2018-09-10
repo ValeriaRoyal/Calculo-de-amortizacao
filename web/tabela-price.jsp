@@ -22,7 +22,7 @@
                     
                     Empréstimo inicial (em R$):<br><input type="text" name="C"><br>
                     Tempo (em meses):<br><input type="text" name="n"><br>
-                    Taxa de juros (% em meses):<br><input type="text" name="i"><br>
+                    Taxa de juros (% em meses):<br><input type="text" name="i"><br><br>
                     <input type="submit" value="Calcular"></td>
                     
                 </form>
