@@ -17,7 +17,15 @@
             <%@include file="WEB-INF/jspf/cabecalho.jspf"%>
             
     <div class="fundo">        
-            <h3>Sistema Price de Amortização</h3>
+            <h1>Sistema Price de Amortização</h1>
+            <br>
+            <p class="texto">A Tabela PRICE é um sistema de amortização de dívidas, 
+                também chamado de sistema francês de amortização. É conhecido por 
+                ter as parcelas constantes – e não a amortização, como no caso do SAC. 
+                É muito utilizado para calcular empréstimos de curto prazo 
+                (compras parceladas em geral) e financiamentos de curto e médio 
+                prazos (financiamentos de veículos, por exemplo).</p>
+            
                 <form>
                     
                     Empréstimo inicial (em R$):<br><input type="text" name="C"><br>
