@@ -10,7 +10,6 @@ ou seja, uma seção com links de navegação.--%>
         
     <div class="areaCabecalho">
             <div class="area">
-              
                 <h1 id="logo" >PROJETO 2</h1>
                 <div id="menu">
                     <a href="home.jsp">HOME</a>

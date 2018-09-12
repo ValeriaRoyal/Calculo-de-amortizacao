@@ -103,8 +103,7 @@
                 </tr>
             </table>
             <%}%>
-
-        <%@include file="WEB-INF/jspf/rodape.jspf"%>
         </div>
+        <%@include file="WEB-INF/jspf/rodape.jspf"%>
     </body>
 </html>
