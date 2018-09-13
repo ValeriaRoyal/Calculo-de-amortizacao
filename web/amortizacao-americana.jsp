@@ -19,7 +19,7 @@
 
         <title>Amortização Americana</title>
 
-        <%@include file="WEB-INF/jspf/cabecalho.jspf"%>           
+         <div><%@include file="WEB-INF/jspf/cabecalho.jspf"%> </div>           
 
         <link href= "CSS/styleOficial.css" rel="stylesheet"/>
         
@@ -30,7 +30,7 @@
           <script type="text/javascript">
             $(document).ready(function(){
              $('#01').mask("999.999,00",{reverse: true});
-             $('#02').mask("999.9",{reverse: true});
+             $('#02').mask("99.99");
              $('#03').mask("999.999",{reverse: true});
             });
             
@@ -60,11 +60,11 @@
                         Faça o cálculo :
                     </h1>
                     <br><br>
-                    <form>
+                    <form name="formulario "method="post">
                         <p>Saldo Devedor :  <input id="01" type="text" name="vl_divida" size="20" border="none"
-                                                    border-radius="4px">            
-                            Taxa de Juros (%):  <input id="02"  type="text" name="vl_juros" size="3">            
-                            Tempo :  <input id="03"  type="text" name="qt_mes" size="5">
+                                                    border-radius="4px" placeholder="Saldo Devedor">            
+                            Taxa de Juros (%):  <input id="02"  type="text" name="vl_juros" size="3" placeholder="Juros">            
+                            Tempo :  <input id="03"  type="text" name="qt_mes" size="5" placeholder="Tempo">
                         </p>
                         <br>
 
@@ -163,7 +163,8 @@
                         </script>
                     <%}%>
                     <br>
-                    <%@include file="WEB-INF/jspf/rodape.jspf"%>
+                    
+                    <div> <%@include file="WEB-INF/jspf/rodape.jspf"%></div> 
                     </body>
                     </html>
 

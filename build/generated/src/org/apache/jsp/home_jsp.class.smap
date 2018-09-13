@@ -5,6 +5,16 @@ JSP
 *F
 + 0 home.jsp
 home.jsp
++ 1 cabecalho.jspf
+WEB-INF/jspf/cabecalho.jspf
++ 2 rodape.jspf
+WEB-INF/jspf/rodape.jspf
 *L
-5,14:44
+5,9:50
+1#1,7:59
+9,14:66
+13#0,6:80
+1#2,4:86
+4,6:89
+18#0,4:94
 *E

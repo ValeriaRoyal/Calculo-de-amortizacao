@@ -67,6 +67,9 @@ tr:nth-child(even) {
     height: 65px;
     padding-top: 15px;
     padding-bottom: 10px;
+    position: fixed;
+    bottom: 0;
+    
 }
 #textoRodape{
     margin-bottom: 15px;
@@ -151,6 +154,13 @@ a:hover{
     color: white;
     background: cornflowerblue;
 }
+
+
+
+
+
+
+
 
 /* Wandes */
 h1 {   

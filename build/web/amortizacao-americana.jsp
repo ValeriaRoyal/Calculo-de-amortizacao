@@ -5,6 +5,7 @@
 --%>
 
 
+<%@page import="com.sun.java.swing.plaf.windows.resources.windows"%>
 <%@page import="java.text.DecimalFormatSymbols"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.Locale"%>
@@ -18,9 +19,27 @@
 
         <title>Amortização Americana</title>
 
-        <%@include file="WEB-INF/jspf/cabecalho.jspf"%>           
+         <div><%@include file="WEB-INF/jspf/cabecalho.jspf"%> </div>           
 
         <link href= "CSS/styleOficial.css" rel="stylesheet"/>
+        
+         <script type="text/javascript" src="Js/jquery-3.3.1.min.js"></script>
+        
+        <script type="text/javascript" src="Js/jquery.mask.min.js"></script>
+        
+          <script type="text/javascript">
+            $(document).ready(function(){
+             $('#01').mask("999.999,00",{reverse: true});
+             $('#02').mask("99.99");
+             $('#03').mask("999.999",{reverse: true});
+            });
+            
+            $('#numerico').keyup(function() {
+            $('#01').val(this.value.replace(/\D/g, ''));
+            $('#02').val(this.value.replace(/\D/g, ''));
+            $('#03').val(this.value.replace(/\D/g, ''));
+              });
+        </script>
 
     </head>
     <body>
@@ -41,11 +60,11 @@
                         Faça o cálculo :
                     </h1>
                     <br><br>
-                    <form>
-                        <p>Saldo Devedor :  <input  type="text" name="vl_divida" size="20" border="none"
-                                                    border-radius="4px">            
-                            Taxa de Juros (%):  <input   type="text" name="vl_juros" size="3">            
-                            Tempo :  <input   type="text" name="qt_mes" size="5">
+                    <form name="formulario "method="post">
+                        <p>Saldo Devedor :  <input id="01" type="text" name="vl_divida" size="20" border="none"
+                                                    border-radius="4px" placeholder="Saldo Devedor">            
+                            Taxa de Juros (%):  <input id="02"  type="text" name="vl_juros" size="3" placeholder="Juros">            
+                            Tempo :  <input id="03"  type="text" name="qt_mes" size="5" placeholder="Tempo">
                         </p>
                         <br>
 
@@ -53,10 +72,19 @@
                         <br>
                     </form>
                     
-                    <%if (request.getParameter("calcular") != null) {
+                    <%if (request.getParameter("calcular") != null && !request.getParameter("vl_divida").isEmpty() && !request.getParameter("vl_juros").isEmpty()
+                            && !request.getParameter("qt_mes").isEmpty()) {
+                            
                             NumberFormat formatacao = new DecimalFormat("#,##0.00", new DecimalFormatSymbols(new Locale("pt", "BR")));
-
-                            double sd_devedor = Double.parseDouble(request.getParameter("vl_divida"));                           
+                          
+                            String entrada = new String();
+                            
+                            entrada = request.getParameter("vl_divida");
+                              
+                            entrada =  entrada.replace(",", "");
+                            entrada =  entrada.replace(".", "");
+                           
+                            double sd_devedor = Double.parseDouble( entrada);                           
                            
                             double tempo = Double.parseDouble(request.getParameter("qt_mes"));
                             
@@ -127,7 +155,16 @@
                         
                         
                     </table>
-                    <%}%>                   
+                    <%}else{%>
+                    <script type="text/javascript">
+                       
+                         window.alert("Preencha os campos!!");
+                                               
+                        </script>
+                    <%}%>
+                    <br>
+                    
+                    <div> <%@include file="WEB-INF/jspf/rodape.jspf"%></div> 
                     </body>
                     </html>
 
