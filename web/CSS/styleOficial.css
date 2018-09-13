@@ -72,6 +72,41 @@ tr:nth-child(even) {
     margin-bottom: 15px;
     text-align: center;
 }
+.areaFormulario{
+    margin-top: 15px;
+    text-align: center;
+    width: 35%;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+.textoFormulario{
+    font-family: monospace;
+    font-size: 16px;
+}
+.entradaFormulario{
+    width: 50%;
+    margin: 5px 0;
+    font-family: monospace;
+    font-size: 16px;
+    border: 3px solid cornflowerblue;
+    border-radius: 10px;
+    
+}
+.calcular{
+    border: 3px solid cornflowerblue;
+    border-radius: 10px;
+    width: 55%;
+    margin: 5px 0;
+    font-family: monospace;
+    font-size: 16px;
+    background: none;
+    color: cornflowerblue;
+}
+.calcular:hover{
+    background-color: cornflowerblue;
+    color: white;
+}
+
 /*Área do menu*/
 .areaCabecalho{
     border: 1px solid black;   

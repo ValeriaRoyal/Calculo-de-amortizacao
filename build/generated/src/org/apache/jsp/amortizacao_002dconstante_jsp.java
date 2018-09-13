@@ -91,6 +91,7 @@ public final class amortizacao_002dconstante_jsp extends org.apache.jasper.runti
       out.write("\r\n");
       out.write("        <div class=\"fundo\">\r\n");
       out.write("            <h1 id=\"tituloTexto\">AMORTIZAÇÃO CONSTANTE</h1>\r\n");
+      out.write("            <div id=\"blocoTexto\">\r\n");
       out.write("            <p class=\"texto\">Neste sistema o saldo devedor é reembolsado em valores \r\n");
       out.write("            de amortização iguais. Desta forma, no sistema SAC o valor das \r\n");
       out.write("            prestações é decrescente, já que os juros diminuem a cada prestação. \r\n");
@@ -103,7 +104,8 @@ public final class amortizacao_002dconstante_jsp extends org.apache.jasper.runti
       out.write("            sempre o mesmo, o que faz com que a parcela de amortização da dívida \r\n");
       out.write("            seja maior no início do financiamento, fazendo com que o saldo devedor \r\n");
       out.write("            caia mais rapidamente do que em outros mecanismos de amortização.</p>\r\n");
-      out.write("            <hr/>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            \r\n");
       out.write("        \r\n");
       out.write("            <form>\r\n");
       out.write("              Saldo devedor:<br/>\r\n");
@@ -232,11 +234,9 @@ if(i==0){
       out.write("\r\n");
       out.write("<link href=\"CSS/styleOficial.css\" type=\"text/css\" rel=\"stylesheet\"/>\r\n");
       out.write("\r\n");
-      out.write("<footer>\r\n");
-      out.write("    <div id=\"areaRodape\">\r\n");
-      out.write("        <p id=\"textoRodape\">Todos os direitos reservados.</p>\r\n");
-      out.write("        <a href=\"https://github.com/ValeriaRoyal/Calculo-de-amortizacao\">GitHub</a>\r\n");
-      out.write("    </div>\r\n");
+      out.write("<footer id=\"areaRodape\">\r\n");
+      out.write("    <p id=\"textoRodape\">Todos os direitos reservados.</p>\r\n");
+      out.write("    <a href=\"https://github.com/ValeriaRoyal/Calculo-de-amortizacao\">GitHub</a>\r\n");
       out.write("</footer>     \r\n");
       out.write("\r\n");
       out.write("    </body>\r\n");

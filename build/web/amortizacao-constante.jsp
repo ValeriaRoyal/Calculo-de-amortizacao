@@ -35,15 +35,15 @@
             caia mais rapidamente do que em outros mecanismos de amortização.</p>
             </div>
             
-        
-            <form>
-              Saldo devedor:<br/>
-              <input type="text" name="SD"/><br/>
-              Taxa de juros (%):<br/>
-               <input type="text" name="TX"/><br/>
-               Tempo:<br/>
-              <input type="text" name="T"/><br/>
-              <br/><input type="submit" name="BC" value="Calcular"/>
+            
+            <form class="areaFormulario">
+                <p class="textoFormulario">Saldo devedor:</p>
+                <input class="entradaFormulario" type="text" name="SD"/><br/>
+                <p class="textoFormulario">Taxa de juros (%):</p>
+                <input class="entradaFormulario" type="text" name="TX"/><br/>
+                <p class="textoFormulario">Tempo:</p>
+               <input class="entradaFormulario" type="text" name="T"/><br/>
+               <input class="calcular" type="submit" name="BC" value="Calcular"/>
             </form>
             <br/>
         
