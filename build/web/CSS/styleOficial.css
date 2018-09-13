@@ -6,7 +6,7 @@ body{
     height: 100%;
     text-align: center;
     background: #f2f2f2;
-    font-family: monospace;          
+    font-family: monospace;
 }
 
 table {
@@ -28,18 +28,19 @@ tr:nth-child(even) {
 
 /*Alterações do Leo*/
 .texto{
-    margin: 0 5% 10px 5%;
+    margin-bottom: 10px;
     text-align: justify;
 }
 .fundo{
     margin: 0 auto;
     margin-top: 65px;
-    margin-bottom: 80px;
+    margin-bottom: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
     background: white;
-    width: 950px;
+    width: 70%;
     border-radius: 10px;
+    
 }
 .tabela{
     width: 90%;
@@ -56,17 +57,19 @@ tr:nth-child(even) {
     text-align: center;
     margin: 5px 5%;
 }
+#blocoTexto{
+    border-bottom: 1px solid #d9d9d9;
+    margin: 0 5%;
+}
 #areaRodape{
     background-color: white;
-    position: fixed;
-    bottom: 0;
     width: 100%;
     height: 65px;
-    margin-top: 15px;
-    border-top: 1px solid #d9d9d9;
+    padding-top: 15px;
+    padding-bottom: 10px;
 }
 #textoRodape{
-    margin: 10px 0;
+    margin-bottom: 15px;
     text-align: center;
 }
 /*Área do menu*/

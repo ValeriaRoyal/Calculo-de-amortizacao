@@ -2,9 +2,7 @@
 <%@ page pageEncoding="UTF-8" %>
 <link href="CSS/styleOficial.css" type="text/css" rel="stylesheet"/>
 <%--footer == rodapé --%>
-<footer>
-    <div id="areaRodape">
-        <p id="textoRodape">Todos os direitos reservados.</p>
-        <a href="https://github.com/ValeriaRoyal/Calculo-de-amortizacao">GitHub</a>
-    </div>
+<footer id="areaRodape">
+    <p id="textoRodape">Todos os direitos reservados.</p>
+    <a href="https://github.com/ValeriaRoyal/Calculo-de-amortizacao">GitHub</a>
 </footer>     

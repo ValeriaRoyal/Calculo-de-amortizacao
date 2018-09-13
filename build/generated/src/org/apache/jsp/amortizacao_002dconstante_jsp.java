@@ -78,7 +78,6 @@ public final class amortizacao_002dconstante_jsp extends org.apache.jasper.runti
       out.write("        \r\n");
       out.write("    <div class=\"areaCabecalho\">\r\n");
       out.write("            <div class=\"area\">\r\n");
-      out.write("              \r\n");
       out.write("                <h1 id=\"logo\" >PROJETO 2</h1>\r\n");
       out.write("                <div id=\"menu\">\r\n");
       out.write("                    <a href=\"home.jsp\">HOME</a>\r\n");
@@ -227,15 +226,19 @@ if(i==0){
       out.write("            ");
 }
       out.write("\r\n");
-      out.write("\r\n");
+      out.write("        </div>\r\n");
       out.write("        ");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("<link href=\"CSS/styleOficial.css\" type=\"text/css\" rel=\"stylesheet\"/>\r\n");
       out.write("\r\n");
+      out.write("<footer>\r\n");
+      out.write("    <div id=\"areaRodape\">\r\n");
+      out.write("        <p id=\"textoRodape\">Todos os direitos reservados.</p>\r\n");
+      out.write("        <a href=\"https://github.com/ValeriaRoyal/Calculo-de-amortizacao\">GitHub</a>\r\n");
+      out.write("    </div>\r\n");
+      out.write("</footer>     \r\n");
       out.write("\r\n");
-      out.write("<hr><br><br><center><footer>Todos os direitos reservados.<br><br><a href=\"https://github.com/ValeriaRoyal/Calculo-de-amortizacao\">GitHub </a></footer></center><br><br>       \r\n");
-      out.write("\r\n");
-      out.write("        </div>\r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {

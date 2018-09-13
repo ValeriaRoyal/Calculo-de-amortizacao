@@ -20,6 +20,7 @@
         <%@include file="WEB-INF/jspf/cabecalho.jspf"%>
         <div class="fundo">
             <h1 id="tituloTexto">AMORTIZAÇÃO CONSTANTE</h1>
+            <div id="blocoTexto">
             <p class="texto">Neste sistema o saldo devedor é reembolsado em valores 
             de amortização iguais. Desta forma, no sistema SAC o valor das 
             prestações é decrescente, já que os juros diminuem a cada prestação. 
@@ -32,7 +33,8 @@
             sempre o mesmo, o que faz com que a parcela de amortização da dívida 
             seja maior no início do financiamento, fazendo com que o saldo devedor 
             caia mais rapidamente do que em outros mecanismos de amortização.</p>
-            <hr/>
+            </div>
+            
         
             <form>
               Saldo devedor:<br/>
