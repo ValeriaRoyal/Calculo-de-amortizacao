@@ -85,7 +85,7 @@
 
                     <tr>
                         <th>N° Prestações</th>
-                        <th>Armotização</th>
+                        <th>Amortização</th>
                         <th>Juros( <%=request.getParameter("vl_juros")%>% de <%=formatacao.format(sd_devedor)%>)</th>
                         <th>Divida</th>
 

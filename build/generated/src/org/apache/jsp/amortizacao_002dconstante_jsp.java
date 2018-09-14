@@ -64,6 +64,24 @@ public final class amortizacao_002dconstante_jsp extends org.apache.jasper.runti
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("        <title>Projeto2 - Amortização Constante</title>\r\n");
       out.write("        <link href=\"CSS/styleOficial.css\" type=\"text/css\" rel=\"stylesheet\"/>\r\n");
+      out.write("\r\n");
+      out.write("        <script type=\"text/javascript\" src=\"Js/jquery-3.3.1.min.js\"></script>\r\n");
+      out.write("\r\n");
+      out.write("        <script type=\"text/javascript\" src=\"Js/jquery.mask.min.js\"></script>\r\n");
+      out.write("\r\n");
+      out.write("        <script type=\"text/javascript\">\r\n");
+      out.write("            $(document).ready(function () {\r\n");
+      out.write("                $('#01').mask(\"999.999,00\", {reverse: true});\r\n");
+      out.write("                $('#02').mask(\"99.99\");\r\n");
+      out.write("                $('#03').mask(\"999.999\", {reverse: true});\r\n");
+      out.write("            });\r\n");
+      out.write("\r\n");
+      out.write("            $('#numerico').keyup(function () {\r\n");
+      out.write("                $('#01').val(this.value.replace(/\\D/g, ''));\r\n");
+      out.write("                $('#02').val(this.value.replace(/\\D/g, ''));\r\n");
+      out.write("                $('#03').val(this.value.replace(/\\D/g, ''));\r\n");
+      out.write("            });\r\n");
+      out.write("        </script>\r\n");
       out.write("    </head>\r\n");
       out.write("    <body> \r\n");
       out.write("        ");
@@ -92,124 +110,126 @@ public final class amortizacao_002dconstante_jsp extends org.apache.jasper.runti
       out.write("        <div class=\"fundo\">\r\n");
       out.write("            <h1 id=\"tituloTexto\">AMORTIZAÇÃO CONSTANTE</h1>\r\n");
       out.write("            <div id=\"blocoTexto\">\r\n");
-      out.write("            <p class=\"texto\">Neste sistema o saldo devedor é reembolsado em valores \r\n");
-      out.write("            de amortização iguais. Desta forma, no sistema SAC o valor das \r\n");
-      out.write("            prestações é decrescente, já que os juros diminuem a cada prestação. \r\n");
-      out.write("            O valor da amortização é calculada dividindo-se o valor do principal \r\n");
-      out.write("            pelo número de períodos de pagamento, ou seja, de parcelas.</p>\r\n");
-      out.write("            <p class=\"texto\">O SAC é um dos tipos de sistema de amortização utilizados em \r\n");
-      out.write("            financiamentos imobiliários. A principal característica do SAC é \r\n");
-      out.write("            que ele amortiza um percentual fixo do valor principal (emissão), \r\n");
-      out.write("            desde o início do financiamento. Esse percentual de amortização é \r\n");
-      out.write("            sempre o mesmo, o que faz com que a parcela de amortização da dívida \r\n");
-      out.write("            seja maior no início do financiamento, fazendo com que o saldo devedor \r\n");
-      out.write("            caia mais rapidamente do que em outros mecanismos de amortização.</p>\r\n");
+      out.write("                <p class=\"texto\">Neste sistema o saldo devedor é reembolsado em valores \r\n");
+      out.write("                    de amortização iguais. Desta forma, no sistema SAC o valor das \r\n");
+      out.write("                    prestações é decrescente, já que os juros diminuem a cada prestação. \r\n");
+      out.write("                    O valor da amortização é calculada dividindo-se o valor do principal \r\n");
+      out.write("                    pelo número de períodos de pagamento, ou seja, de parcelas.</p>\r\n");
+      out.write("                <p class=\"texto\">O SAC é um dos tipos de sistema de amortização utilizados em \r\n");
+      out.write("                    financiamentos imobiliários. A principal característica do SAC é \r\n");
+      out.write("                    que ele amortiza um percentual fixo do valor principal (emissão), \r\n");
+      out.write("                    desde o início do financiamento. Esse percentual de amortização é \r\n");
+      out.write("                    sempre o mesmo, o que faz com que a parcela de amortização da dívida \r\n");
+      out.write("                    seja maior no início do financiamento, fazendo com que o saldo devedor \r\n");
+      out.write("                    caia mais rapidamente do que em outros mecanismos de amortização.</p>\r\n");
       out.write("            </div>\r\n");
-      out.write("            \r\n");
-      out.write("        \r\n");
-      out.write("            <form>\r\n");
-      out.write("              Saldo devedor:<br/>\r\n");
-      out.write("              <input type=\"text\" name=\"SD\"/><br/>\r\n");
-      out.write("              Taxa de juros (%):<br/>\r\n");
-      out.write("               <input type=\"text\" name=\"TX\"/><br/>\r\n");
-      out.write("               Tempo:<br/>\r\n");
-      out.write("              <input type=\"text\" name=\"T\"/><br/>\r\n");
-      out.write("              <br/><input type=\"submit\" name=\"BC\" value=\"Calcular\"/>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("            <form class=\"areaFormulario\">\r\n");
+      out.write("                <p class=\"textoFormulario\">Saldo devedor:</p>\r\n");
+      out.write("                <input class=\"entradaFormulario\" type=\"number\" name=\"SD\"/><br/>\r\n");
+      out.write("                <p class=\"textoFormulario\">Taxa de juros (%):</p>\r\n");
+      out.write("                <input  class=\"entradaFormulario\" type=\"number\" name=\"TX\"/><br/>\r\n");
+      out.write("                <p class=\"textoFormulario\">Tempo:</p>\r\n");
+      out.write("                <input  class=\"entradaFormulario\" type=\"number\" name=\"T\"/><br/>\r\n");
+      out.write("                <input class=\"calcular\" type=\"submit\" name=\"BC\" value=\"Calcular\"/>\r\n");
       out.write("            </form>\r\n");
       out.write("            <br/>\r\n");
-      out.write("        \r\n");
+      out.write("\r\n");
       out.write("            ");
-if(request.getParameter("BC")!=null){
-                //Declaração de variáveis
-                NumberFormat formato = new DecimalFormat ("#,##0.00", new DecimalFormatSymbols (new Locale ("pt", "BR")));
-                double SaldoDevedor = Double.parseDouble(request.getParameter("SD"));
-                double TaxaJuros = (Double.parseDouble(request.getParameter("TX")))/100;
-                double Tempo = Double.parseDouble(request.getParameter("T"));
-                double Amortizacao=SaldoDevedor/Tempo;
-                double TotalJ=0;
-                double TotalP=0;
-                
-                
-      out.write("<table class=\"tabela\">\r\n");
+if (request.getParameter("BC") != null && !request.getParameter("SD").isEmpty() && !request.getParameter("TX").isEmpty()
+                        && !request.getParameter("T").isEmpty()) {
+
+                    NumberFormat formato = new DecimalFormat("#,##0.00", new DecimalFormatSymbols(new Locale("pt", "BR")));
+
+                    double SaldoDevedor = Double.parseDouble(request.getParameter("SD"));
+                    double TaxaJuros = (Double.parseDouble(request.getParameter("TX"))) / 100;
+                    double Tempo = Double.parseDouble(request.getParameter("T"));
+                    double Amortizacao = SaldoDevedor / Tempo;
+                    double TotalJ = 0;
+                    double TotalP = 0;
+
+            
+      out.write("\r\n");
+      out.write("            <table class=\"tabela\">\r\n");
       out.write("                <tr>\r\n");
       out.write("                    <th>Tempo</th><th>Prestação</th><th>Juros</th>\r\n");
       out.write("                    <th>Amortização</th><th>Saldo Devedor</th>\r\n");
       out.write("                </tr>\r\n");
       out.write("                ");
-for(int i=0;i<=Tempo;i++){
+for (int i = 0; i <= Tempo; i++) {
       out.write("\r\n");
-      out.write("                    <tr>\r\n");
-      out.write("                        ");
+      out.write("                <tr>\r\n");
+      out.write("                    ");
       out.write("\r\n");
-      out.write("                        <td>");
+      out.write("                    <td>");
       out.print(i);
       out.write("</td>\r\n");
+      out.write("                    ");
+      out.write("\r\n");
+      out.write("                    <td>\r\n");
       out.write("                        ");
+if (i != 0) {
       out.write("\r\n");
-      out.write("                        <td>\r\n");
-      out.write("                            ");
-if(i!=0){
-      out.write("\r\n");
-      out.write("                                ");
-TotalP+=Amortizacao+(SaldoDevedor*TaxaJuros);
-      out.write("\r\n");
-      out.write("                                ");
-      out.print("R$ "+formato.format(Amortizacao+(SaldoDevedor*TaxaJuros)));
-      out.write("\r\n");
-      out.write("                            ");
-}
-      out.write("\r\n");
-      out.write("                        </td>\r\n");
       out.write("                        ");
+TotalP += Amortizacao + (SaldoDevedor * TaxaJuros);
       out.write("\r\n");
-      out.write("                        <td>\r\n");
-      out.write("                            ");
-if(i!=0){
-      out.write("\r\n");
-      out.write("                                ");
-TotalJ+=SaldoDevedor*TaxaJuros;
-      out.write("\r\n");
-      out.write("                                ");
-      out.print("R$ "+formato.format(SaldoDevedor*TaxaJuros));
-      out.write("\r\n");
-      out.write("                            ");
-}
-      out.write("\r\n");
-      out.write("                        </td>\r\n");
       out.write("                        ");
+      out.print("R$ " + formato.format(Amortizacao + (SaldoDevedor * TaxaJuros)));
       out.write("\r\n");
-      out.write("                        <td>\r\n");
-      out.write("                            ");
-if(i!=0){
-      out.write("\r\n");
-      out.write("                                ");
-      out.print("R$ "+formato.format(Amortizacao));
-      out.write("\r\n");
-      out.write("                            ");
-}
-      out.write("\r\n");
-      out.write("                        </td>\r\n");
       out.write("                        ");
-      out.write("\r\n");
-      out.write("                        <td>\r\n");
-      out.write("                            ");
-if(i==0){
-      out.write("\r\n");
-      out.write("                                ");
-      out.print("R$ "+formato.format(SaldoDevedor));
-      out.write("\r\n");
-      out.write("                            ");
-}
-                            else{
-      out.write("\r\n");
-      out.write("                                ");
-      out.print("R$ "+formato.format(SaldoDevedor-=Amortizacao));
-      out.write("\r\n");
-      out.write("                            ");
 }
       out.write("\r\n");
-      out.write("                        </td>\r\n");
-      out.write("                    </tr>   \r\n");
+      out.write("                    </td>\r\n");
+      out.write("                    ");
+      out.write("\r\n");
+      out.write("                    <td>\r\n");
+      out.write("                        ");
+if (i != 0) {
+      out.write("\r\n");
+      out.write("                        ");
+TotalJ += SaldoDevedor * TaxaJuros;
+      out.write("\r\n");
+      out.write("                        ");
+      out.print("R$ " + formato.format(SaldoDevedor * TaxaJuros));
+      out.write("\r\n");
+      out.write("                        ");
+}
+      out.write("\r\n");
+      out.write("                    </td>\r\n");
+      out.write("                    ");
+      out.write("\r\n");
+      out.write("                    <td>\r\n");
+      out.write("                        ");
+if (i != 0) {
+      out.write("\r\n");
+      out.write("                        ");
+      out.print("R$ " + formato.format(Amortizacao));
+      out.write("\r\n");
+      out.write("                        ");
+}
+      out.write("\r\n");
+      out.write("                    </td>\r\n");
+      out.write("                    ");
+      out.write("\r\n");
+      out.write("                    <td>\r\n");
+      out.write("                        ");
+if (i == 0) {
+      out.write("\r\n");
+      out.write("                        ");
+      out.print("R$ " + formato.format(SaldoDevedor));
+      out.write("\r\n");
+      out.write("                        ");
+} else {
+      out.write("\r\n");
+      out.write("                        ");
+      out.print("R$ " + formato.format(SaldoDevedor -= Amortizacao));
+      out.write("\r\n");
+      out.write("                        ");
+}
+      out.write("\r\n");
+      out.write("                    </td>\r\n");
+      out.write("                </tr>   \r\n");
       out.write("                ");
 }
       out.write("\r\n");
@@ -218,13 +238,21 @@ if(i==0){
       out.write("\r\n");
       out.write("                    <th>Total</th>\r\n");
       out.write("                    <td colspan=\"2\">");
-      out.print("Pago - R$ "+formato.format(TotalP));
+      out.print("Pago - R$ " + formato.format(TotalP));
       out.write("</td>\r\n");
       out.write("                    <td colspan=\"2\">");
-      out.print("Juros pago - R$ "+formato.format(TotalJ));
+      out.print("Juros pago - R$ " + formato.format(TotalJ));
       out.write("</td>\r\n");
       out.write("                </tr>\r\n");
       out.write("            </table>\r\n");
+      out.write("            ");
+} else if (request.getParameter("BC") != null) {
+      out.write("\r\n");
+      out.write("            <script type=\"text/javascript\">\r\n");
+      out.write("\r\n");
+      out.write("                window.alert(\"Preencha os campos!!\");\r\n");
+      out.write("\r\n");
+      out.write("            </script>\r\n");
       out.write("            ");
 }
       out.write("\r\n");

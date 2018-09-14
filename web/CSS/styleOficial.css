@@ -67,9 +67,6 @@ tr:nth-child(even) {
     height: 65px;
     padding-top: 15px;
     padding-bottom: 10px;
-    bottom: 0;
-    position: relative;
-
 }
 #textoRodape{
     margin-bottom: 15px;

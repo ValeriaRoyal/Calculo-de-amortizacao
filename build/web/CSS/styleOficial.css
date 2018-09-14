@@ -40,7 +40,7 @@ tr:nth-child(even) {
     background: white;
     width: 70%;
     border-radius: 10px;
-    
+
 }
 .tabela{
     width: 90%;
@@ -67,9 +67,6 @@ tr:nth-child(even) {
     height: 65px;
     padding-top: 15px;
     padding-bottom: 10px;
-    position: fixed;
-    bottom: 0;
-    
 }
 #textoRodape{
     margin-bottom: 15px;
@@ -93,7 +90,7 @@ tr:nth-child(even) {
     font-size: 16px;
     border: 3px solid cornflowerblue;
     border-radius: 10px;
-    
+
 }
 .calcular{
     border: 3px solid cornflowerblue;
@@ -134,7 +131,7 @@ tr:nth-child(even) {
     float: left;
     color: cornflowerblue;
     font-size: 35px;
-    
+
 }
 a{
     text-decoration: none;
@@ -156,15 +153,9 @@ a:hover{
 }
 
 
-
-
-
-
-
-
 /* Wandes */
 h1 {   
-    
+
     font-size: 28px;
     font-family: Verdana, sans-serif;
     font-style: italic;
@@ -172,31 +163,31 @@ h1 {
 
 
 .texto2 {
-        border: 1px transparent;
-        background-color: lightgrey;
-        border-radius: 12px;
-        text-align: justify;        
- 	margin-left: auto;
-	margin-right: auto;        
-	width: 50%;
-        
+    border: 1px transparent;
+    background-color: lightgrey;
+    border-radius: 12px;
+    text-align: justify;        
+    margin-left: auto;
+    margin-right: auto;        
+    width: 50%;
+
 }
 
 
 P{    
-    
+
     font-style: normal;
     font-family: arial;
     font-size: 16px;
-   
-   
+
+
 }
 .titulo2 {
     padding-top: 5%;
     padding-right: 5%;
     padding-bottom: 1%;
     padding-left: 5%;
-   
+
 }
 
 .btn{
@@ -213,17 +204,17 @@ P{
 input{    
     border-radius: 4px; 
     padding: 4px;
-                                                      
+
 }
 
 .tabela2{
-      border: 1px solid black;
-       border-collapse: collapse;           
-        background-color: white;
-        border-radius: 12px;
-        text-align: justify;        
- 	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
-       
-      }
+    border: 1px solid black;
+    border-collapse: collapse;           
+    background-color: white;
+    border-radius: 12px;
+    text-align: justify;        
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
